@@ -168,6 +168,7 @@ int main(int argc, char *argv[]){
     // arguments: lowest reference, highest reference, lowest modification, highest modification
     if (argc < 6){
         cout << "too few arguments" << endl;
+        cout << "Usage: ./main.exe [threshold] [smallest reference] [largest reference] [smallest modification] [largest modification]" << endl;
         return 0;
     }
     threshold = atof(argv[1]);
@@ -179,6 +180,11 @@ int main(int argc, char *argv[]){
     double** raw; // 2D array of storing subject test results
     raw = greedy_search(threshold,l_ref,h_ref,l_mod,h_mod);
     array2CSV(h_mod-l_mod+1,h_ref-l_ref+1,raw);
-    
+
+    // interpolate untested points
+    // this will be handled by calling a separated python script
+    // the generated JND profile will be stored as csv file
+    system("python ./interpolate.py");   //modify this line if not match your python
+
     return 0;
 }
