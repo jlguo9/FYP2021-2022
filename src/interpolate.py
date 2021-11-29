@@ -46,6 +46,7 @@ def showHeatMap(l_ref,h_ref,l_mod,h_mod):
     img = ax.imshow(data, cmap = plt.cm.jet)
     plt.colorbar(img)
     plt.title("JND Surface Visualization")
+    plt.savefig("./JND_Surface.png")
     plt.show()
 
 
