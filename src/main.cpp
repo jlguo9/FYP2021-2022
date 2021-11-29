@@ -184,7 +184,8 @@ int main(int argc, char *argv[]){
     // interpolate untested points
     // this will be handled by calling a separated python script
     // the generated JND profile will be stored as csv file
-    system("python ./interpolate.py");   //modify this line if not match your python
+    string parameter = " " + to_string(l_ref) + " " + to_string(h_ref) + " " + to_string(l_mod) + " " + to_string(h_mod);
+    system("python ./interpolate.py"+parameter);   //modify this line if not match your python
 
     return 0;
 }
