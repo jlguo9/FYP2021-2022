@@ -1,8 +1,10 @@
 #include <iostream>
+#include <fstream>
 #include <queue>
 #include <map>
 #include <tuple>
 #include <math.h>
+
 using namespace std;
 
 struct node
@@ -40,6 +42,20 @@ void printArray(int rows,int cols,double** array){
     }
 }
 
+void array2CSV(int rows, int cols, double** array){
+    ofstream outfile;
+    outfile.open("./raw_matrix.csv");
+
+    for(int i = 0;i<rows;i++){
+        outfile << array[i][0];
+        for(int j = 1;j<cols;j++){
+            outfile << "," << array[i][j];
+        }
+        outfile << endl;
+    }
+    outfile.close();
+}
+
 double** greedy_search(double threshold, int l_ref, int h_ref, int l_mod, int h_mod){
     int rows = h_mod-l_mod+1;
     int cols = h_ref-l_ref+1;
@@ -68,7 +84,7 @@ double** greedy_search(double threshold, int l_ref, int h_ref, int l_mod, int h_
     while(true){
         double largest_vol;
         if((largest_vol=volume.top()) < threshold){
-            cout << "largest volume now: " << largest_vol << endl;
+            cout << "largest volume now: " << largest_vol << " < " << threshold << endl;
             break;
         }
         volume.pop();
@@ -162,6 +178,7 @@ int main(int argc, char *argv[]){
 
     double** raw; // 2D array of storing subject test results
     raw = greedy_search(threshold,l_ref,h_ref,l_mod,h_mod);
+    array2CSV(h_mod-l_mod+1,h_ref-l_ref+1,raw);
     
     return 0;
 }
