@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+# opencv package
+opencv-3.4.16.tar.gz
