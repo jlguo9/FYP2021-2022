@@ -1,3 +1,4 @@
+// #include "util.h"
 #include "offline_generation.h"
 #include <queue>
 #include <map>
@@ -6,15 +7,6 @@
 #include <iostream>
 
 using namespace std;
-
-void printArray(int rows,int cols,double** array){
-    for(int i=0;i<rows;i++){
-        for(int j=0;j<cols;j++){
-            cout << array[i][j] << " ";
-        }
-        printf("\n");
-    }
-}
 
 double** greedy_search(double threshold, int l_ref, int h_ref, int l_mod, int h_mod){
     int rows = h_mod-l_mod+1;
