@@ -1,12 +1,5 @@
-// #include "util.h"
 #include "offline_generation.h"
-#include <queue>
-#include <map>
-#include <tuple>
-#include <math.h>
-#include <iostream>
-
-using namespace std;
+#include "util.h"
 
 double** greedy_search(double threshold, int l_ref, int h_ref, int l_mod, int h_mod){
     int rows = h_mod-l_mod+1;

@@ -1,3 +1,11 @@
+#include <queue>
+#include <map>
+#include <tuple>
+#include <math.h>
+#include <iostream>
+
+using namespace std;
+
 struct node
 {
     int x;  //row in the array
