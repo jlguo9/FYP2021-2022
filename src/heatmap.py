@@ -27,16 +27,16 @@ class heatmap:
         df = pd.read_csv(path,header=None)
         data = df.to_numpy()
         XLabel = list(range(l_ref,h_ref+1))
-        YLabel = list(range(l_mod,h_mod+1))
+        YLabel = list(range(h_mod,l_mod-1,-1))
 
         fig = plt.figure()
         ax = fig.add_subplot(111)
         ax.set_xticks(range(len(XLabel)))
         ax.set_xticklabels(XLabel)
         ax.set_yticks(range(len(YLabel)))
-        ax.set_yticklabels(YLabel[::-1])
+        ax.set_yticklabels(YLabel)#[::-1]
 
-        img = ax.imshow(data, cmap = plt.cm.jet, interpolation="bilinear")
+        img = ax.imshow(data, extent = [0,len(XLabel)-1,len(YLabel)-1,0], cmap = plt.cm.jet, interpolation="bilinear")
         plt.colorbar(img)
         plt.title("JND Surface Visualization")
         plt.savefig(path+".png")
