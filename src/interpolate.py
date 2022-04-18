@@ -24,7 +24,7 @@ def interpolate(out_path):
     f = interp2d(x[0], x[1], arr[x].flatten(), kind='linear')
     res = arr.copy()
     res[arr==0] = f(range(rows), range(cols)).T[arr==0]
-    # res[res>1] = 1
+    res[res>1] = 1
     # res[res<0] = 0
     print(res)
 
