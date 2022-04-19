@@ -5,7 +5,7 @@ import pandas as pd
 import sys
 import numpy as np
 
-class heatmap:
+class Heatmap:
     # def showHeatMap(path, l_ref, h_ref, l_mod, h_mod):
     #     df = pd.read_csv(path,header=None)
     #     data = df.to_numpy()
@@ -22,7 +22,6 @@ class heatmap:
     #     plt.title("JND Surface Visualization")
     #     plt.savefig(path+".png")
     #     plt.show()
-
     def showHeatMap(path, l_ref, h_ref, l_mod, h_mod):
         df = pd.read_csv(path,header=None)
         data = df.to_numpy()
@@ -48,4 +47,4 @@ if __name__ == "__main__":
     h_ref = int(sys.argv[3])
     l_mod = int(sys.argv[4])
     h_mod = int(sys.argv[5])
-    heatmap.showHeatMap(out_path, l_ref, h_ref, l_mod, h_mod)
+    Heatmap.showHeatMap(out_path, l_ref, h_ref, l_mod, h_mod)
