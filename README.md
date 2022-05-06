@@ -52,10 +52,10 @@ A csv file storing awareness at each point and a heatmap will be generated.
     $ ./main.exe -o <input filepath> <output folder> <smallest reference> <largest reference> <smallest modification> \
     <largest modification> <original loss rate> <thread_number(optional)>
 
-Input filepath is path of the csv-format JND Surface generated offline. output folder is the folder where the resultant JND Surface will be put.
+Input filepath is the path of the csv-format JND Surface generated offline. output folder is the folder where the resultant JND Surface will be put.
 The last parameter "thread number" is optional; if a number is given, the online transformation will run in multi-threads using openMP.
 
-The program will repeatedly ask for current network loss rate, and give the resultant JND Surfaces. Enter -1 to quit.
+Note that f1 and f2 should be user-defined before running according to the error concealment strategy used. The program will repeatedly ask for current network loss rate, and give the resultant JND Surfaces. Enter -1 to quit.
 
 ## To merge two JND Surfaces regarding one same control input:
 
@@ -114,5 +114,7 @@ will be displayed on the client's screen if the ball is received by the client c
 
 ## References
 [1] Optimizing the Perceptual Quality of Real-Time Multimedia Applications, J. X. Xu and B. W. Wah, IEEE Multimedia, vol. 22, no. 4, Oct.-Dec. 2015, pp. 14-28.
+
 [2] Optimality of Greedy Algorithm for Generating Just-Noticeable Difference Surfaces, J. X. Xu and B. W. Wah, IEEE Trans. on Multimedia, vol. 18, no. 7, July 2016, pp. 1330-1337.
+
 [3] Optimizing Perceptual Quality for Online Multimedia Systems with Fast-Paced Interactions, J. X. Xu, Ph.D. Thesis, Dept. of Computer Science and Engineering, Chinese Univ. of Hong Kong, Hong Kong, Aug. 2017.
