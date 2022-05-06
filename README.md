@@ -44,7 +44,7 @@ Sections included: offline generation, online transformation, merging two surfac
 
     $ ./main.exe -g <output path> <threshold> <smallest reference> <largest reference> <smallest modification> <largest modification>
 
-Then the program will repeatedly ask for subjective test results at certain points, util an error smaller than threshold can be achieved.
+Then the program will repeatedly ask for subjective test results at certain points, until an error smaller than threshold can be achieved.
 A csv file storing awareness at each point and a heatmap will be generated.
 
 ## To transform an offline-generated JND Surface into online version:
