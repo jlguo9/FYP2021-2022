@@ -1,9 +1,10 @@
+from hashlib import new
 from scipy.interpolate import interp2d
 from scipy.interpolate import griddata
 import pandas as pd
 import numpy as np
 import sys
-import heatmap
+from heatmap import Heatmap
 
 def interpolate(out_path):
     df = pd.read_csv("./raw_matrix.csv",header=None)
@@ -24,7 +25,7 @@ def interpolate(out_path):
     f = interp2d(x[0], x[1], arr[x].flatten(), kind='linear')
     res = arr.copy()
     res[arr==0] = f(range(rows), range(cols)).T[arr==0]
-    # res[res>1] = 1
+    res[res>1] = 1
     # res[res<0] = 0
     print(res)
 
@@ -37,7 +38,7 @@ def main():
     l_mod = int(sys.argv[4])
     h_mod = int(sys.argv[5])
     interpolate(out_path)
-    heatmap.showHeatMap(out_path, l_ref,h_ref,l_mod,h_mod)
+    Heatmap.showHeatMap(out_path, l_ref, h_ref, l_mod, h_mod)
 
 if __name__ == "__main__":
     main()

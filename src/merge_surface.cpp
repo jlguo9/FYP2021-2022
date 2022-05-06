@@ -30,5 +30,7 @@ double** merge_surface(string input_path1, string input_path2, int rows, int col
         }
     }
     printArray(rows, cols, res);
+    free(surface1);
+    free(surface2);
     return res;
 }
