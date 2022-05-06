@@ -82,11 +82,11 @@ This is a simple ping-pong game using UDP and socket programming. To compile the
 
     $ make
 
-# Start the receiver in a terminal
+## Start the receiver in a terminal
 
     $ ./receiver <port number> <window size> <output path> <log file>
 
-# Start the sender in another terminal
+## Start the sender in another terminal
 
     $ ./sender <receiver IP address> <receiver port number> <window size> <payload file> <log file>
 
@@ -96,11 +96,11 @@ This is a simple ping-pong game using TCP and socket programming. To compile the
 
     $ make
 
-# Start the server in a terminal
+## Start the server in a terminal
 
     $ ./gameserver <port number>
 
-# Start the client in another terminal
+## Start the client in another terminal
 
     $ ./gameclient <server ip addr> <server port>
 
@@ -112,7 +112,7 @@ If the user press "q", the client will disconnect and close. If the user press e
 The server will return the "ball": a certain-byte file to the client, and "SUCCESSFULLY Received a file from the server" 
 will be displayed on the client's screen if the ball is received by the client correctly.
 
-## References
+# References
 [1] Optimizing the Perceptual Quality of Real-Time Multimedia Applications, J. X. Xu and B. W. Wah, IEEE Multimedia, vol. 22, no. 4, Oct.-Dec. 2015, pp. 14-28.
 
 [2] Optimality of Greedy Algorithm for Generating Just-Noticeable Difference Surfaces, J. X. Xu and B. W. Wah, IEEE Trans. on Multimedia, vol. 18, no. 7, July 2016, pp. 1330-1337.
