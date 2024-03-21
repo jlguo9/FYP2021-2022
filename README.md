@@ -1,5 +1,5 @@
 # FYP2021-2022 Design of a Prototype to Measure the Perceptual Quality of Online Games
-This is the repository for our FYP2021-2022
+This is the repository for our FYP2021-2022 "Design of a Prototype to Measure the Perceptual Quality of Online Games"
 
 # Structure:
     |- WAH2102_code.zip
